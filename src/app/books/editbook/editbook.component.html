@@ -1,0 +1,74 @@
+<div class ="form-container">
+    <div class="form" align="center">
+         <div style="width:80%; margin:25px auto;">  
+ 
+                 <form (ngSubmit)="onEdit()" #f="ngForm">
+                         <h3>Edit Book</h3>
+                     <div class="form-group">
+ 
+                         <div class="form-group">
+                             <label for="name"> Name:</label>
+                             <div class="form-group">
+                                 <input 
+                                    type="text" 
+                                    class="form-control"
+                                    name="name" 
+                                    [ngModel]="name">
+                                </div>
+                         </div>
+ 
+                         <div class="form-group">
+                                 <label> Subject </label>
+                                 <div class="form-group"> 
+                                 <input type="text" 
+                                        class="form-control"
+                                        name="subject" 
+                                        [ngModel]="subject">
+                                 </div>
+                         </div>
+ 
+                         <div class="form-group">
+                                 <label> Author: </label>
+                                 <div class="form-group"> 
+                                 
+                                    <input 
+                                        type="text" 
+                                        class="form-control"
+                                        name="author" 
+                                        [ngModel]="author">
+                                    
+                                  </div>
+                         </div>
+ 
+                         <div class="form-group">
+                                 <label> Book Id: </label>
+                         <div class="form-group"> 
+                               <input type="text" 
+                                      class="form-control" 
+                                      [ngModel]="book_id"
+                                      name="book_id"> </div>
+                         </div>
+ 
+                         <div class="form-group">
+                                     <label> Copies: </label>
+
+                                         <div class="form-group">  
+                                            <input type="text" 
+                                                   class="form-control" 
+                                                   [ngModel]="copies"
+                                                   name="copies">
+                                        </div>
+                         </div>
+ 
+                         <button class="btn btn-primary btn-lg btn-block" type="submit">Edit Book</button>
+                     
+                     </div>
+                     
+                 </form>
+ 
+         </div>
+ 
+ </div>
+ 
+ 
+ 

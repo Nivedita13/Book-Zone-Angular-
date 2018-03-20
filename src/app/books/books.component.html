@@ -1,0 +1,40 @@
+<style>
+  table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+</style>
+<table>
+  <tr>
+      <th>BOOK NAME</th>
+      <th>SUBJECT</th>
+      <th>AUTHOR</th>
+      <th>BOOK ID</th>
+      <th>NO OF COPIES</th>
+      <th>EDIT BUTTON</th>
+  </tr>
+
+      <tr *ngFor="let book of books; let i = index">
+          <td>  {{ book.name }} </td>
+          <td>  {{ book.subject }} </td>
+          <td>  {{ book.author }} </td>
+          <td>  {{ book.id }} </td>
+          <td>  {{ book.copies }} </td>
+          
+          <td> 
+              <a class="btn btn-primary"  [routerLink]='book._id'>Edit</a>
+          </td>
+      </tr> 
+</table>

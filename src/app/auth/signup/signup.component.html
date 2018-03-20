@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col-xs-7" style="width : 41%">
+      <img 
+        id="frog"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgw0XUdU4An0jrhCQPGWftAa6155zXtRr9GNAvWGA96qwIC2_j">
+  </div>
+
+
+<div class="col-md-7">
+      <form (ngSubmit)="onSignup()" #f="ngForm">  
+<section class="form-elegant">
+
+  
+  <div class="card" style="width : 80% ">
+
+      <div class="card-body mx-4">
+
+          
+          <div class="text-center">
+              <h3 class="mb-5"><strong>Sign Up</strong></h3>
+          </div>
+
+
+          <div class="md-form">
+              <input type="text" id="username" name="username" ngModel class="form-control">
+              <label for="username">Your Username</label>
+          </div>
+
+          <div class="md-form">
+                <input type="email" id="email" name="email" ngModel class="form-control">
+                <label for="email">Your Email</label>
+            </div>
+
+          <div class="md-form pb-3">
+              <input type="password" id="password" name="password" ngModel class="form-control">
+              <label for="password">Your password</label>
+
+          </div>
+
+          <div class="text-center mb-3">
+              <button type="submit" class="btn btn-outline-info btn-block">Sign UP</button>
+          </div>
+          
+
+      </div>
+
+  </div>
+
+</section>
+</form>
+</div>
+</div>

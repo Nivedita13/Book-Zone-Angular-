@@ -1,0 +1,29 @@
+<style>
+    table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+</style>
+<table>
+    <tr>
+        <th>BOOK</th>
+        <th>BOOK PROFILE</th>
+        
+    </tr>
+            <tr *ngFor="let books of RequestedBooks">
+                <td> {{ books.name }} </td>
+                <td> <button class="btn btn-primary" [routerLink]='bookProfile'>Book Profile</button> </td>
+            </tr>
+</table>
