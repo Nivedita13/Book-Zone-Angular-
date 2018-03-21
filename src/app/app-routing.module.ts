@@ -14,6 +14,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { SigninAdminComponent } from './auth/signin-admin/signin-admin.component';
 import { userAuthService } from './auth/user.auth.service';
 import { adminAuthService } from './auth/admin.auth.service';
+import { BookProfileComponent } from './admin/requested-books/book-profile/book-profile.component';
+import { UserBooksComponent } from './user-books/user-books.component';
 
 
 const appRoutes : Routes = [
@@ -28,14 +30,16 @@ const appRoutes : Routes = [
             { path : 'allUsers' , component : AllUsersComponent },
             { path : 'newBook' , component : NewBookComponent },
             { path : 'books/:id' , component: EditbookComponent },
-            { path : 'requestedBooks' , component: RequestedBooksComponent },            
+            { path : 'requestedBooks' , component: RequestedBooksComponent},
+            { path : 'requestedBooks/:id' , component : BookProfileComponent}
+                            
         ] },
     { path : 'user' , component : UserComponent,canActivate:[userAuthService],
         children:[
             { path : '' , component : WelcomeComponent },                       
-            { path : 'books' , component : BooksComponent }                                               
+            { path : 'books' , component : UserBooksComponent }                                               
         ]
-    }   
+    }       
    ];
 
 @NgModule({

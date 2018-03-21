@@ -24,6 +24,6 @@ tr:nth-child(even) {
     </tr>
             <tr *ngFor="let books of RequestedBooks">
                 <td> {{ books.name }} </td>
-                <td> <button class="btn btn-primary" [routerLink]='bookProfile'>Book Profile</button> </td>
+                <td> <button class="btn btn-primary" (click)="onBookProfile(books._id)">Book Profile</button> </td>
             </tr>
 </table>

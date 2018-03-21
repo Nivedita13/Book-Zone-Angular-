@@ -8,7 +8,7 @@ import { Injectable } from "@angular/core";
 export class ReqestedBooksService{
      requestedBooks : RequestedBooks[] = [];
 
-    constructor(public http : Http){} 
+    constructor(public http : Http){}   
 
     getRequestedUsers(){
 
@@ -21,5 +21,7 @@ export class ReqestedBooksService{
                 }
             );  
       }
+
+      
 }
     

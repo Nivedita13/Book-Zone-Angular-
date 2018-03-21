@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ReqestedBooksService } from './requested-books.service';
 import { Http } from '@angular/http';
 import { RequestedBooks } from './requested-books.model';
+import { BookProfileService } from './book-profile/book-profile.service';
+import { Router, ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-requested-books',
@@ -11,8 +14,11 @@ import { RequestedBooks } from './requested-books.model';
 export class RequestedBooksComponent implements OnInit {
   RequestedBooks : RequestedBooks[] = [];    
 
-  constructor(public http : Http,
-              public requestedBooksService : ReqestedBooksService) { }
+  constructor(private http : Http,
+              private requestedBooksService : ReqestedBooksService,
+              private bookProfileService : BookProfileService,
+              private router : Router,
+              private route : ActivatedRoute) { }
 
   ngOnInit() {
     this.requestedBooksService.getRequestedUsers().subscribe(
@@ -25,6 +31,11 @@ export class RequestedBooksComponent implements OnInit {
         console.log(error);
       }
     )
+  }
+
+  onBookProfile(bookId){
+    this.bookProfileService.getRequestedBook(bookId);
+    this.router.navigate([bookId],{relativeTo : this.route});
   }
 
 }

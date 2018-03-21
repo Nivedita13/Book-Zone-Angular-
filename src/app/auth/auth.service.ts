@@ -79,7 +79,7 @@ export class AuthService{
 
     Logout(){
         localStorage.clear();
-        this.router.navigate(['/signin']);
+        this.router.navigate(['/']);
         this.flashmessage.success("Successfully Logged out", { delay: 5000, generalClass: 'alert alert-success' });        
         }
 }

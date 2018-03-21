@@ -20,7 +20,7 @@
 
 
             <div class="md-form">
-                <input type="text" id="Form-email1" name="username" [ngModel]="username" class="form-control">
+                <input type="text" id="Form-email1" name="username" [ngModel]="username" autofocus class="form-control">
                 <label for="Form-email1">Your Username</label>
             </div>
 
@@ -31,7 +31,7 @@
             </div>
 
             <div class="text-center mb-3">
-                <button type="button" class="btn btn-outline-info btn-block" (click)="onSignin()">Sign in</button>
+                <button type="submit" class="btn btn-outline-info btn-block" (click)="onSignin()">Sign in</button>
             </div>
             
 

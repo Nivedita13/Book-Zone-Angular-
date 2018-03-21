@@ -13,7 +13,7 @@ export class BookService{
     books : Book[] = [];
 
     constructor(public http : Http){
-        this.http.get("http://localhost:3000/admin_books").map(
+        this.http.get("http://localhost:3000/allbooks").map(
             (response: Response) => {
                 this.books.push(...response.json());
             }
@@ -22,7 +22,7 @@ export class BookService{
     
 
     allBook(){
-        return this.http.get("http://localhost:3000/admin_books").map(
+        return this.http.get("http://localhost:3000/allbooks").map(
             (response : Response) => {
                 var bookFetched = response.json();
                 this.books = response.json();
@@ -64,6 +64,22 @@ export class BookService{
             }
             
         );
+    }
+
+    issueBook(bookId){
+        let userId = JSON.parse(localStorage.getItem('user')).userid;
+                 
+            let issueDetails = {
+                'username' : userId,
+                'bookId' : bookId
+            }
+
+        this.http.get("http://localhost:3000/issue/"+bookId+"/"+userId).subscribe(
+            (response : Response) => {
+                
+            }
+        );
+            
     }
 
 }

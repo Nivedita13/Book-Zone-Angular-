@@ -27,6 +27,8 @@ import { SigninAdminComponent } from './auth/signin-admin/signin-admin.component
 import {  FlashMessageModule } from 'angular-flash-message';
 import { userAuthService } from './auth/user.auth.service';
 import { adminAuthService } from './auth/admin.auth.service';
+import { BookProfileService } from './admin/requested-books/book-profile/book-profile.service';
+import { UserBooksComponent } from './user-books/user-books.component';
 
 
 @NgModule({
@@ -46,7 +48,8 @@ import { adminAuthService } from './auth/admin.auth.service';
     RequestedBooksComponent,
     BookProfileComponent,
     WelcomeComponent,
-    SigninAdminComponent
+    SigninAdminComponent,
+    UserBooksComponent
     ],
   imports: [
     BrowserModule,
@@ -56,7 +59,7 @@ import { adminAuthService } from './auth/admin.auth.service';
     HttpModule,
     FlashMessageModule
   ],
-  providers: [BookService, AuthService, ReqestedBooksService, userAuthService, adminAuthService],
+  providers: [BookService, AuthService, ReqestedBooksService, userAuthService, adminAuthService, BookProfileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

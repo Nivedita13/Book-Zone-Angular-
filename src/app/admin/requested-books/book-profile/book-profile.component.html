@@ -1,20 +1,31 @@
-<style>
-  table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
+<div class="container">
 
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
+    <div class="row">
 
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
+        <div class="col-xs-12">
 
-</style>
-           
+                <div class="alert alert-primary">
+                        <h4>BOOK DETAILS</h4> 
+                </div>
+    
+                <div class="card">
+    
+                    <div class="card-body">
+                        
+                        <h5>NAME : {{ book.name }}</h5>
+                        <h5>SUBJECT : {{ book.subject }}</h5>
+                        <h5>AUTHOR : {{ book.author }}</h5>
+                        <h5>ID : {{ book.id }}</h5>                       
+                                                                        
+                    </div>
+
+        </div>
+
             
+
+            </div>
+    </div>
+    
+
+</div>
+

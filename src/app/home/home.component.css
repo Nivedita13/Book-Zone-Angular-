@@ -1,3 +1,7 @@
 /* body{
     background-image: url("http://whytoread.com/wp-content/uploads/2015/03/best-books-book-youll-ever-read.jpg");
 } */
+.pic {
+    height : 100%;
+    width : 100%;
+}
