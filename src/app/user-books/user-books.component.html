@@ -1,3 +1,4 @@
+<hr>
 <style>
   table {
   font-family: arial, sans-serif;
@@ -12,7 +13,7 @@ td, th {
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+  background-color: #ccc2c2;
 }
 
 </style>
@@ -34,7 +35,7 @@ tr:nth-child(even) {
           <td>  {{ book.copies }} </td>
           
           <td> 
-              <a class="btn btn-primary" (click)="onIssue(book._id)">Issue</a>
+              <a class="btn btn-info" (click)="onIssue(book._id)">Issue</a>
           </td>
       </tr> 
 </table>

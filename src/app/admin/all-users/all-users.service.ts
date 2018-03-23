@@ -18,7 +18,6 @@ export class AllUserService{
                             console.log(response.json().err);
                     }else{
                         var allUsers = response.json();
-                        console.log("users are here",allUsers)
                         return allUsers;
                    }
                         

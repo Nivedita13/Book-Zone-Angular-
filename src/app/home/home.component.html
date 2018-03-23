@@ -1,65 +1,45 @@
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-    .text{
-        color: crimson;
-        font-size: 90px;
-        font-family: myFirstFont;
-        margin: 40px 0px;
-    }
-    .books{
-        margin: 40px 20px;
- 
-    }
-    .buttonA{
-        margin: auto 400px;
-    }
-    .buttonB{
-        margin: auto 405px;
-    }
-    /* body{
-        background: linear-gradient(180deg, grey, white);
-    } */
+* {
+    box-sizing: border-box;
+}
 
+body {
+    margin: 0;
+    font-family: Arial;
+    font-size: 17px;
+}
 
+.container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
 
+.container img {vertical-align: middle;}
+
+.container .content {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+}
 </style>
-
+</head>
 <body>
-        <div class="container">
-         
-        <div class="row">
-            <div class="col-md-4">
-                <div class="books">
-                    <img class="pic" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAtMUysHlaWhEMBmPdhVwNRg8T8YM8l0i4PD4Il49PU4mKv00d">
-                </div>
-                </div>
-            <div class="col-md-4">
-                <div class="text">
-                    BOOK ZONE
-                </div>
-            </div>
-            <div class="col-md-4">
-                    <div class="books">
-                            <img class="pic" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAtMUysHlaWhEMBmPdhVwNRg8T8YM8l0i4PD4Il49PU4mKv00d">
-                        </div>
-            </div>
-        </div>
-        <div class="buttonA">
-        <div class="row">
-            
-                    <div class="col-xs-12">
-                            <button type="submit" class="btn btn-primary btn-lg" routerLink="/signinAdmin">Admin</button>
-                        </div>
-        </div>
-        </div>
-        <div class="buttonB">     
-                    <hr>
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <button type="submit" class="btn btn-primary btn-lg" routerLink="/signin">User</button>
-                        </div>
-                     </div>
-        </div>
-        </div>
+
+<div class="container">
+  <img src="http://s1.1zoom.me/big0/798/294407-Sepik.jpg" alt="Notebook" style="width:100%;">
+  <div class="content">
+    <h1>In Doubt ??</h1>
+    <h2>COME HERE..</h2>
+  </div>
+</div>
+
 </body>
+</html>

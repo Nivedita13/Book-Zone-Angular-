@@ -1,15 +1,31 @@
-<nav class="navbar navbar-default bg-light">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+<nav class="navbar navbar-inverse">
   <div class="container-fluid">
-      <div class="navbar-header">
-          <a routerLink="" class="navbar-brand">BOOK ZONE</a>
-      </div>
-    
-      <div class="navbar-collapse">
-          <ul class="nav navbar-nav navbar-right ">
-                  <li><a routerLink="/signup">Register</a></li>
-                  <li><a style="cursor : pointer;" routerLink="/signin">Login</a></li>
-                  <li><a style="cursor : pointer;" (click)="onLogout()">Logout</a></li>
-          </ul>
-      </div>
-   </div>
-</nav> 
+    <div class="navbar-header">
+      <a class="navbar-brand" id="main" href="/"><i class="fa fa-book" aria-hidden="true"></i> BOOK ZONE</a>
+    </div>
+    <ul class="nav navbar-nav" id="second">
+      <li *ngIf="!isloggedIn"><a href="/signinAdmin"><i class="fa fa-user-circle" aria-hidden="true"></i> ADMIN</a></li>
+      <li *ngIf="!isloggedIn"><a href="signin"><i class="fa fa-user-circle-o" aria-hidden="true"></i> USER</a></li>
+  
+      <li *ngIf="isloggedIn" style="cursor: pointer;">
+          <a (click)="onLogout()"><i class="fas fa-sign-out-alt"></i>Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+  
+
+</html>

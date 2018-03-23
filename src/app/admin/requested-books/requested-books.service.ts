@@ -12,10 +12,9 @@ export class ReqestedBooksService{
 
     getRequestedUsers(){
 
-        return  this.http.get("http://localhost:3000/admin/requested_books").map(
+        return  this.http.get("http://localhost:3000/admin/requestedbooks").map(
                 (response : Response) => {
                     var foundBooks = response.json();
-                    console.log("requested books are here",foundBooks)
                     return foundBooks;
     
                 }

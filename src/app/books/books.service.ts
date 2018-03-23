@@ -5,6 +5,7 @@ import { Http,
 import 'rxjs/Rx';
 import { Injectable } from "@angular/core";
 import { Subject } from "rxjs/Subject";
+import { Router } from "@angular/router";
 
 @Injectable()
 
@@ -12,7 +13,8 @@ export class BookService{
     // booksChanged = new Subject<Book[]>();
     books : Book[] = [];
 
-    constructor(public http : Http){
+    constructor(public http : Http,
+                private router : Router){
         this.http.get("http://localhost:3000/allbooks").map(
             (response: Response) => {
                 this.books.push(...response.json());
@@ -43,6 +45,7 @@ export class BookService{
                 console.log("books",response.json());
             }
         );
+        this.router.navigate(['/admin']);
 
     }
 
@@ -53,6 +56,32 @@ export class BookService{
             }
         )
     }
+
+    getRequestedUser(userIdlist: String[]){
+       
+        var usernames = [];
+        var flag : Boolean;
+
+        for(var i=0;i<userIdlist.length;i++){
+          
+            this.http.get("http://localhost:3000/admin/"+userIdlist[i]).map(
+                (response:Response)=>{
+                    if(response.json().success){
+                        console.log(response.json().username);        
+                        usernames.push(response.json().username);                    
+                    }else{
+                        console.log(response.json().message);
+                    }
+                        
+                }
+            ).subscribe();
+
+            if(i == userIdlist.length-1){
+                flag = true;
+            }          
+        }
+            return usernames;
+}
 
     editBook(index : number, book : Book){
         
@@ -81,5 +110,7 @@ export class BookService{
         );
             
     }
+
+  
 
 }

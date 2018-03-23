@@ -6,12 +6,25 @@ import { AuthService } from '../auth/auth.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
 
   constructor(private authService : AuthService) { }
+  
+  isloggedIn:Boolean;
+
+  ngOnInit(){
+    
+    this.isloggedIn = this.authService.isloggedin();
+    
+    this.authService.loginstatus.subscribe
+    (
+       (status) =>{this.isloggedIn=status}
+    )
+  }
+  
 
   onLogout(){
-    this.authService.Logout();
+        this.authService.Logout();
   }
 
 }

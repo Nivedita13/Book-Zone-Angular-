@@ -17,7 +17,6 @@ export class SigninAdminComponent {
   constructor(private authService : AuthService) { }
 
   onSignin(){
-    console.log(this.authForm);
     let data = this.authService.SignIn(this.authForm.value.username, this.authForm.value.password);  
   }
 

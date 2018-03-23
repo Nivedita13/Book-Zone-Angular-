@@ -24,17 +24,15 @@ export class RequestedBooksComponent implements OnInit {
     this.requestedBooksService.getRequestedUsers().subscribe(
 
       (foundBooks) => {
-        console.log(foundBooks);
         this.RequestedBooks.push(...foundBooks);
       },
       (error) => {
-        console.log(error);
+        console.log("mesage from backedn"+error);
       }
     )
   }
 
   onBookProfile(bookId){
-    this.bookProfileService.getRequestedBook(bookId);
     this.router.navigate([bookId],{relativeTo : this.route});
   }
 

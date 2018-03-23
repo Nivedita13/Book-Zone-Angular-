@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, Response} from '@angular/http';
 import { NgIf } from '@angular/common';
 import { FlashMessage } from 'angular-flash-message';
+import { Subject } from "rxjs";
 
 
 @Injectable()
@@ -14,11 +15,17 @@ export class AuthService{
                 private flashmessage : FlashMessage){}
 
 
+    user: string;
+    isadmin: boolean;
+    loginstatus = new Subject<boolean>();
+    
+
     SignIn(username : string, password : string){
         let User = {
             username: username,
             password: password
         }
+
         let header = new Headers();
         header.append('Content-Type','application/json');
 
@@ -77,9 +84,26 @@ export class AuthService{
 
     }
 
-    Logout(){
-        localStorage.clear();
-        this.router.navigate(['/']);
-        this.flashmessage.success("Successfully Logged out", { delay: 5000, generalClass: 'alert alert-success' });        
+
+        isloggedin() {
+            if (localStorage.getItem('user') !== null) {
+                if (JSON.parse(localStorage.getItem('user')).username == 'admin') {
+                    this.isadmin = true;
+                }
+                return true;
+            }
+            else {
+                this.isadmin = false;
+                return false;
+            }
         }
+
+
+    Logout(){
+                this.isadmin=false;
+                this.loginstatus.next(false);
+                localStorage.clear();
+                this.flashmessage.success("Successfully Logged out", { delay: 5000, generalClass: 'alert alert-success' });        
+                this.router.navigate(['']);
+            }
 }
